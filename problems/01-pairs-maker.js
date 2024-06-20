@@ -4,7 +4,17 @@ function should return a 2D array where the subarrays represent unique pairs of
 element from the input array.
 */
 
-// Your code here 
+function pairsMaker(arr) {
+    let pairs = [];
+    for (let i = 0; i < arr.length; i++) {
+        let one = arr[i];
+        for (let k = i + 1; k < arr.length; k++) {
+            let two = arr[k];
+            pairs.push([one, two])
+        }
+    }
+    return pairs;
+}
 
 // console.log(pairsMaker(["a", "b", "c", "d"]));
 // //=> [ [ 'a', 'b' ],

@@ -5,7 +5,15 @@ least one value.
 */
 
 function maxInMatrix(matrix) {
-  // Your code here 
+  let largest = matrix[0][0]
+  for (let i = 0; i < matrix.length; i++) {
+    for (let k = 0; k < matrix[i].length; k++) {
+      if (largest < matrix[i][k]) {
+        largest = matrix[i][k];
+      }
+    }
+  }
+  return largest;
 }
 
 // matrix = [

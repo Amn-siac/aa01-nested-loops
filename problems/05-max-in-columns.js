@@ -6,9 +6,20 @@ each of its elements is the max value in a column.
 */
 
 function maxColumn(matrix) {
-  // Your code here 
-}
+  let arr = [];
+  for (let i = 0; i < matrix.length; i++) {
+    let largest = matrix[i][0];
+    for (let k = 0; k < matrix[i].length; k++) {
 
+      if (largest < matrix[k][i]) {
+        largest = matrix[k][i];
+      }
+
+    }
+    arr.push(largest);
+  }
+  return arr;
+}
 // matrix = [
 //   [5, 9, 21],
 //   [9, 19, 6],
