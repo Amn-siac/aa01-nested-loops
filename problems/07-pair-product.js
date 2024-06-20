@@ -6,7 +6,21 @@ together.
 You may assume that the input array contains unique elements.
 */
 
-// Your code here 
+function pairProduct(nums, product) {
+    let arrow = false;
+    for (let i = 0; i < nums.length; i++) {
+        let tempPro = 0;
+        let one = nums[i];
+        for (let k = i + 1; k < nums.length; k++) {
+            let two = nums[k];
+            tempPro = one * two;
+            if (tempPro === product) {
+                return true;
+            }
+        }
+    }
+    return arrow;
+}
 
 // console.log(pairProduct([4, 2, 5, 8], 16));    // true
 // console.log(pairProduct([8, 1, 9, 3], 8));     // true

@@ -5,7 +5,21 @@ numbers of the array add up to the target value. You can assume that input array
 contains only unique numbers.
 */
 
-// Your code here 
+function twoSum(arr, target) {
+    let arrow = false;
+    for (let i = 0; i < arr.length; i++) {
+        let tempSum = 0;
+        let one = arr[i];
+        for (let k = i + 1; k < arr.length; k++) {
+            let two = arr[k];
+            tempSum = one + two;
+            if (tempSum === target) {
+                return true;
+            }
+        }
+    }
+    return arrow;
+}
 
 // console.log(twoSum([1, 7, 3, 0, 2], 5)); // true
 // console.log(twoSum([1, 7, 3, 0, 2], 6)); // false
