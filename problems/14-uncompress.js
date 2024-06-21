@@ -8,7 +8,15 @@ Hint: you can use the built-in Number function should convert a numeric string
 into the number type. For example. Number("4") // => 4
 */
 
-// Your code here 
+function uncompress(str) {
+    let newStr = '';
+    for (let i = 0; i < str.length; i++) {
+        for (let j = 0; j < Number(str[i]); j++) {
+            newStr += str[i - 1];
+        }
+    }
+    return newStr;
+}
 
 // console.log(uncompress("x3y4z2"));   // 'xxxyyyyzz'
 // console.log(uncompress("a5b2c4z1")); // 'aaaaabbccccz'

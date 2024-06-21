@@ -5,7 +5,23 @@ elements at corresponding indices from the input arrays. If one of the arrays is
 shorter than the other, then substitute null for the missing elements.
 */
 
-// Your code here 
+function zanyZip(arr1, arr2) {
+    let zip = [];
+    for (let i = 0; i < arr1.length || i < arr2.length; i++) {
+        let inputArr = [];
+        for (let j = 0; j < arr1.length; j++) {
+            if (arr1[i] === undefined) {
+                arr1[i] = null;
+            }
+            if (arr2[i] === undefined) {
+                arr2[i] = null;
+            }
+        }
+        inputArr.push(arr1[i], arr2[i]);
+        zip.push(inputArr)
+    }
+    return zip;
+}
 
 // console.log(zanyZip([1, 2], ["eins", "zwei", "drei", "vier"]));
 // // [ [ 1, 'eins' ], [ 2, 'zwei' ], [ null, 'drei' ], [ null, 'vier' ] ]

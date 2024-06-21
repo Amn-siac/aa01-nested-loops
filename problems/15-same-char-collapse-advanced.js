@@ -8,7 +8,17 @@ For example, we take the following steps to collapse "zzzxaaxy":
 zzzxaaxy -> zxaaxy -> zxxy -> zy
 */
 
-// Your code here 
+function sameCharCollapse(str) {
+    str = str.split('')
+    for (let i = 0; i < str.length; i++) {
+        for (let j = 0; j < str.length; j++) {
+            if (str[j] === str[j + 1]) {
+                str.splice(j, 2)
+            }
+        }
+    }
+    return str.join('');
+}
 
 // console.log(sameCharCollapse("zzzxaaxy"));  // "zy"
 // // because zzzxaaxy -> zxaaxy -> zxxy -> zy
