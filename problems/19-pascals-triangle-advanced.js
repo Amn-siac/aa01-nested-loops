@@ -17,7 +17,9 @@ For example, here are the first 5 levels of Pascal's triangle:
   1 4 6 4 1
 */
 
-// Your code here 
+function pascalsTriangle(n) {
+
+}
 
 // console.log(pascalsTriangle(5));
 /*

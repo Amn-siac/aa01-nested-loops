@@ -13,10 +13,22 @@ For example, given 2, 3, 7, 5, 9 as the base, we should construct this pyramid:
   2   3    7    5    9
 */
 
-// Your code here 
+function pyramidArray(base) {
+  let pyra = [base];
 
-// let p1 = pyramidArray([2, 3, 7, 5, 9]);
-// console.log(p1);
+  for (let i = pyra.length - 1; i >= 0; i--) {
+    let row = [];
+    for (let j = pyra[0].length - 2; j >= 0; j--) {
+      row.unshift(pyra[i][j] + pyra[i][j + 1])
+    }
+    pyra.unshift(row);
+  }
+
+  return pyra;
+}
+
+let p1 = pyramidArray([2, 3, 7, 5, 9]);
+console.log(p1);
 /*
 [
   [ 85 ],
@@ -27,8 +39,8 @@ For example, given 2, 3, 7, 5, 9 as the base, we should construct this pyramid:
 ]
 */
 
-// let p2 = pyramidArray([2, 2, 2, 2]);
-// console.log(p2);
+let p2 = pyramidArray([2, 2, 2, 2]);
+console.log(p2);
 /*
 [
   [ 16 ],
