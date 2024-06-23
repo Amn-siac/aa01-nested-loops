@@ -7,9 +7,9 @@ each of its elements is the max value in a column.
 
 function maxColumn(matrix) {
   let arr = [];
-  for (let i = 0; i < matrix.length; i++) {
-    let largest = matrix[i][i];
-    for (let k = 0; k < matrix[i].length; k++) {
+  for (let i = 0; i < matrix[0].length; i++) {
+    let largest = matrix[0][i];
+    for (let k = 0; k < matrix.length; k++) {
 
       if (largest < matrix[k][i]) {
         largest = matrix[k][i];

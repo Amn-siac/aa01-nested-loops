@@ -14,41 +14,42 @@ For example, given 2, 3, 7, 5, 9 as the base, we should construct this pyramid:
 */
 
 function pyramidArray(base) {
-  let pyra = [base];
-
-  for (let i = pyra.length - 1; i >= 0; i--) {
-    let row = [];
-    for (let j = pyra[0].length - 2; j >= 0; j--) {
-      row.unshift(pyra[i][j] + pyra[i][j + 1])
+  let pyramid = [base];
+  while (pyramid[0].length > 1) {
+    for (let k = 1; k < pyramid[pyramid.length - 1].length; k++) {
+      let i = 0
+      let row = [];
+      for (let j = pyramid[0].length - 1; j > 0; j--) {
+        row.unshift(pyramid[i][j - 1] + pyramid[i][j])
+      }
+      pyramid.unshift(row);
     }
-    pyra.unshift(row);
   }
-
-  return pyra;
+  return pyramid;
 }
 
-let p1 = pyramidArray([2, 3, 7, 5, 9]);
-console.log(p1);
-/*
-[
-  [ 85 ],
-  [ 37, 48 ],
-  [ 15, 22, 26 ],
-  [ 5, 10, 12, 14 ],
-  [ 2, 3, 7, 5, 9 ]
-]
-*/
+// let p1 = pyramidArray([2, 3, 7, 5, 9]);
+// console.log(p1);
+// /*
+// [
+//   [ 85 ],
+//   [ 37, 48 ],
+//   [ 15, 22, 26 ],
+//   [ 5, 10, 12, 14 ],
+//   [ 2, 3, 7, 5, 9 ]
+// ]
+// */
 
-let p2 = pyramidArray([2, 2, 2, 2]);
-console.log(p2);
-/*
-[
-  [ 16 ],
-  [ 8, 8 ],
-  [ 4, 4, 4 ],
-  [ 2, 2, 2, 2 ]
-]
-*/
+// let p2 = pyramidArray([2, 2, 2, 2]);
+// console.log(p2);
+// /*
+// [
+//   [ 16 ],
+//   [ 8, 8 ],
+//   [ 4, 4, 4 ],
+//   [ 2, 2, 2, 2 ]
+// ]
+// */
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = pyramidArray;
