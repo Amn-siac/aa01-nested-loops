@@ -18,6 +18,20 @@ For example, here are the first 5 levels of Pascal's triangle:
 */
 
 function pascalsTriangle(n) {
+    let pascal = [];
+    while (pascal.length < n) {
+
+        for (let i = 0; i < pascal[pascal.length - 1].length < n; i++) {
+
+            for(let j = pascal[pascal.length - 1].length; i >= 0; i--) {
+                
+
+
+            }
+        }
+
+
+    }
 
 }
 
